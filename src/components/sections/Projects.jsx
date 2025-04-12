@@ -1,4 +1,4 @@
-import { Github, ExternalLink } from "lucide-react";
+import React from "react";
 
 const projects = [
   {
@@ -7,9 +7,8 @@ const projects = [
       "Stride Sports is a Reebok Clone replicating the core functionality of the Reebok online store. Users can browse, filter, and shop products in a responsive, seamless UI. It includes sign-in functionality and a secure checkout experience.",
     image: "./landing_page.png",
     technologies: ["HTML", "CSS", "Javascript", "Firebase"],
-    githubLink:
-      "https://github.com/ankithmandal09/B42_Web_024_Scripting-Sorcerers",
-    liveLink: "https://stridesport.netlify.app/",
+    github: "https://github.com/ankithmandal09/B42_Web_024_Scripting-Sorcerers",
+    demo: "https://stridesport.netlify.app/",
   },
   {
     title: "CollabX",
@@ -25,8 +24,8 @@ const projects = [
       "Express.js",
       "MongoDB",
     ],
-    githubLink: "https://github.com/ankithmandal09/CollabX",
-    liveLink: "https://collaabx-pika-894ce5.netlify.app/login",
+    github: "https://github.com/ankithmandal09/CollabX",
+    demo: "https://collaabx-pika-894ce5.netlify.app/login",
   },
   {
     title: "Restaurant Website",
@@ -34,78 +33,74 @@ const projects = [
       "A fully responsive restaurant website featuring a stylish homepage, interactive menu, reservation system, and reviews section. Built using HTML, CSS, and JavaScript with modern design and UX principles.",
     image: "./resturant.png",
     technologies: ["HTML", "CSS", "Javascript"],
-    githubLink: "https://github.com/ankithmandal09/Restaurant-website",
-    liveLink: "https://resturant-website-c629df.netlify.app/",
+    github: "https://github.com/ankithmandal09/Restaurant-website",
+    demo: "https://resturant-website-c629df.netlify.app/",
   },
 ];
 
+const ProjectCard = ({ project }) => {
+  return (
+    <div className="group bg-gray-800/30 backdrop-blur-sm rounded-xl overflow-hidden hover:scale-105 transition-all duration-300">
+      <div className="relative">
+        <img
+          src={project.image}
+          alt={project.title}
+          className="w-full h-48 object-cover group-hover:opacity-70 transition-opacity"
+        />
+        <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity">
+          <a
+            href={project.github}
+            className="px-4 py-2 bg-purple-600 hover:bg-purple-700 rounded-full text-white"
+          >
+            GitHub
+          </a>
+          <a
+            href={project.demo}
+            className="px-4 py-2 bg-cyan-600 hover:bg-cyan-700 rounded-full text-white animate-pulse"
+          >
+            Live Demo
+          </a>
+        </div>
+      </div>
+      <div className="p-6">
+        <h3 className="text-xl font-bold text-cyan-400">{project.title}</h3>
+        <p className="text-gray-300 mt-2">{project.description}</p>
+        <div className="mt-4">
+          <h4 className="text-lg font-semibold text-gray-200">Technologies:</h4>
+          <ul className="flex flex-wrap gap-2 mt-2">
+            {project.technologies.map((tech) => (
+              <li
+                key={tech}
+                className="bg-sky-600/20 text-sky-300 px-3 py-1 text-xs rounded-full font-medium backdrop-blur-sm border border-sky-700"
+              >
+                {tech}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const Projects = () => {
   return (
-    <section
+    <div
       id="Projects"
-      className="bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a] py-20 px-6 sm:px-10 lg:px-20 text-white"
+      className="bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a] py-5 px-6 sm:px-10 lg:px-20 text-white"
     >
       <h2 className="text-4xl font-bold mb-10 relative inline-block">
-        Projects
-        <span className="block w-16 h-1 bg-sky-500 mt-2 rounded-full" />
+        <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-500">
+          Projects
+        </span>
+        <span className="block w-16 h-1 bg-gradient-to-r from-cyan-400 to-purple-500 mt-2" />
       </h2>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 py-10">
         {projects.map((project) => (
-          <div
-            key={project.title}
-            className="group bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300"
-          >
-            <div className="aspect-video overflow-hidden">
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-
-            <div className="p-6">
-              <h3 className="text-2xl font-bold mb-3">{project.title}</h3>
-              <p className="text-gray-300 mb-4 leading-relaxed">
-                {project.description}
-              </p>
-
-              <div className="flex flex-wrap gap-2 mb-6">
-                {project.technologies.map((tech) => (
-                  <span
-                    key={tech}
-                    className="bg-sky-600/20 text-sky-300 px-3 py-1 text-xs rounded-full font-medium backdrop-blur-sm border border-sky-700"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-
-              <div className="flex gap-4">
-                <a
-                  href={project.githubLink}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center gap-2 px-4 py-2 text-sm border border-sky-600 text-sky-400 rounded-lg hover:bg-sky-600 hover:text-white transition-colors"
-                >
-                  <Github className="h-4 w-4" />
-                  Code
-                </a>
-                <a
-                  href={project.liveLink}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center gap-2 px-4 py-2 text-sm bg-sky-500 text-white rounded-lg hover:bg-sky-600 transition-colors"
-                >
-                  <ExternalLink className="h-4 w-4" />
-                  Live Demo
-                </a>
-              </div>
-            </div>
-          </div>
+          <ProjectCard key={project.title} project={project} />
         ))}
       </div>
-    </section>
+    </div>
   );
 };
 

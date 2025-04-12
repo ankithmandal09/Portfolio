@@ -1,6 +1,6 @@
 import { ArrowDown, FileDown, Github, Linkedin, Mail } from "lucide-react";
 
-const HomeSection = () => {
+const Home = () => {
   const scrollToNextSection = () => {
     document
       .getElementById("Education")
@@ -10,7 +10,7 @@ const HomeSection = () => {
   return (
     <section
       id="Home"
-      className="min-h-screen flex items-center justify-center pt-20 px-25"
+      className="min-h-screen flex items-center justify-center pt-20 px-25 bg-gray-900"
     >
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -40,9 +40,10 @@ const HomeSection = () => {
               Full Stack Developer
             </h2>
             <p className="text-lg mb-8 max-w-md text-gray-300">
-              I build exceptional digital experiences with modern technologies.
-              Passionate about creating responsive, user-friendly web
-              applications.
+              A passionate Full Stack Developer specializing in MERN stack
+              development. I transform ideas into scalable web solutions with
+              clean code and pixel-perfect designs. Committed to creating
+              intuitive user experiences that drive business growth.
             </p>
 
             {/* Buttons */}
@@ -50,7 +51,7 @@ const HomeSection = () => {
               <a
                 href="./resume.pdf"
                 download
-                className="flex items-center gap-2 px-4 py-2 bg-white text-black rounded-md hover:bg-gray-200 transition"
+                className="flex items-center gap-2 px-4 py-2 bg-white text-black rounded-md hover:bg-gray-200 transition cursor-pointer"
               >
                 <FileDown className="h-4 w-4" />
                 Download Resume
@@ -88,7 +89,7 @@ const HomeSection = () => {
             </div>
           </div>
         </div>
-        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 hidden md:block animate-bounce-light hover:bg-gray-800 rounded-full p-1">
+        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 hidden md:block animate-bounce-light hover:bg-gray-500 rounded-full p-1">
           <button
             variant="ghost"
             size="icon"
@@ -103,4 +104,4 @@ const HomeSection = () => {
   );
 };
 
-export default HomeSection;
+export default Home;

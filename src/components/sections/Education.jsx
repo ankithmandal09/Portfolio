@@ -36,8 +36,10 @@ const Education = () => {
       className="bg-[#0F172A] py-16 px-4 sm:px-6 lg:px-20 text-white"
     >
       <h2 className="text-4xl font-bold mb-10 relative inline-block">
-        Education
-        <span className="block w-16 h-1 bg-sky-500 mt-2 rounded-full" />
+        <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-500">
+          Education
+        </span>
+        <span className="block w-16 h-1 bg-gradient-to-r from-cyan-400 to-purple-500 mt-2" />
       </h2>
 
       <div className="space-y-16 max-w-5xl mx-auto relative px-4">

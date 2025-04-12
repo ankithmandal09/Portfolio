@@ -19,17 +19,19 @@ const Navbar = () => {
   const handleNavClick = (id) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
     setIsMobileMenuOpen(false);
-  };isScrolled
+  };
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-5 px-4 sm:px-6 lg:px-20 bg-white dark:bg-gray-900 shadow-sm dark:shadow-gray-800`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-5 px-4 sm:px-6 lg:px-20 ${
+        isScrolled
+          ? "bg-white/70 dark:bg-gray-900/70 backdrop-blur-md shadow-md"
+          : "bg-white dark:bg-gray-900 shadow-sm"
+      }`}
     >
       <div className="container flex justify-between items-center px-4">
         <div className="flex items-center gap-2 pl-4 md:pl-8">
-          <span className="text-2xl font-bold text-blue-500 dark:text-blue-400">
-            Ankith Mandal
-          </span>
+          <h1 className="text-2xl font-bold text-cyan-400">Ankith Mandal</h1>
         </div>
 
         {/* Desktop Menu */}
@@ -69,17 +71,22 @@ const Navbar = () => {
           className={`fixed inset-x-0 top-16 shadow-md py-8 md:hidden animate-fade-in bg-white dark:bg-gray-900`}
         >
           <nav className="container flex flex-col gap-4">
-            {["Home", "Education", "Projects", "Skills", "Github", "Contact"].map(
-              (item) => (
-                <button
-                  key={item}
-                  onClick={() => handleNavClick(item)}
-                  className="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors capitalize font-medium py-2 cursor-pointer text-center"
-                >
-                  {item}
-                </button>
-              )
-            )}
+            {[
+              "Home",
+              "Education",
+              "Projects",
+              "Skills",
+              "Github",
+              "Contact",
+            ].map((item) => (
+              <button
+                key={item}
+                onClick={() => handleNavClick(item)}
+                className="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors capitalize font-medium py-2 cursor-pointer text-center"
+              >
+                {item}
+              </button>
+            ))}
           </nav>
         </div>
       )}
