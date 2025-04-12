@@ -47,7 +47,7 @@ const ProjectCard = ({ project }) => {
           alt={project.title}
           className="w-full h-48 object-cover group-hover:opacity-70 transition-opacity"
         />
-        <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity">
+        <div className="absolute inset-0 hidden md:flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity">
           <a
             href={project.github}
             className="px-4 py-2 bg-purple-600 hover:bg-purple-700 rounded-full text-white"
@@ -67,7 +67,7 @@ const ProjectCard = ({ project }) => {
         <p className="text-gray-300 mt-2">{project.description}</p>
         <div className="mt-4">
           <h4 className="text-lg font-semibold text-gray-200">Technologies:</h4>
-          <ul className="flex flex-wrap gap-2 mt-2">
+          <ul className="flex flex-wrap gap-2 mt-2 mb-4">
             {project.technologies.map((tech) => (
               <li
                 key={tech}
@@ -77,6 +77,20 @@ const ProjectCard = ({ project }) => {
               </li>
             ))}
           </ul>
+          <div className="flex gap-4 md:hidden mt-4">
+            <a
+              href={project.github}
+              className="flex-1 text-center px-4 py-2 bg-purple-600 hover:bg-purple-700 rounded-full text-white"
+            >
+              GitHub
+            </a>
+            <a
+              href={project.demo}
+              className="flex-1 text-center px-4 py-2 bg-cyan-600 hover:bg-cyan-700 rounded-full text-white"
+            >
+              Live Demo
+            </a>
+          </div>
         </div>
       </div>
     </div>

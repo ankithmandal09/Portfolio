@@ -47,25 +47,17 @@ const Home = () => {
             </p>
 
             {/* Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <div className="flex gap-4">
-                <a
-                  href="./resume.pdf"
-                  download
-                  className="flex items-center gap-2 px-4 py-2 bg-white text-black rounded-md hover:bg-gray-200 transition cursor-pointer"
-                >
-                  <FileDown className="h-4 w-4" />
-                  Download Resume
-                </a>
-                <a
-                  href="#Projects"
-                  className="flex items-center gap-2 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition cursor-pointer"
-                >
-                  View Projects
-                </a>
-              </div>
+            <div className="flex flex-wrap gap-4 mb-8">
+              <a
+                href="./resume.pdf"
+                download
+                className="flex items-center gap-2 px-4 py-2 bg-white text-black rounded-md hover:bg-gray-200 transition cursor-pointer"
+              >
+                <FileDown className="h-4 w-4" />
+                Download Resume
+              </a>
 
-              <div className="flex gap-3 mt-4 sm:mt-0">
+              <div className="flex gap-3">
                 <a
                   href="https://mail.google.com/mail/?view=cm&to=ankithmandal36@gmail.com"
                   target="_blank"

@@ -189,7 +189,7 @@ const TechStack = () => {
     >
       <h2 className="text-4xl font-bold mb-10 relative inline-block">
         <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-500">
-          Tech Stack
+          Skills
         </span>
         <span className="block w-16 h-1 bg-gradient-to-r from-cyan-400 to-purple-500 mt-2" />
       </h2>
