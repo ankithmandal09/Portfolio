@@ -185,43 +185,32 @@ const TechStack = () => {
     <section
       id="Skills"
       title="Tech Stack"
-      className="bg-[#0F172A] py-16 px-4 sm:px-6 lg:px-20 text-white relative"
+      className="bg-gray-900 text-white py-16 px-4 sm:px-6 lg:px-20"
     >
-      <div className="relative w-full h-full bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px]"></div>
-      <div className="relative z-10">
-        <h2 className="text-4xl font-bold mb-10 relative inline-block">
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-500">
-            Tech Stack
-          </span>
-          <span className="block w-16 h-1 bg-gradient-to-r from-cyan-400 to-purple-500 mt-2" />
-        </h2>
-        <div className="space-y-12 relative">
-          {categories.map((category) => (
-            <div key={category.id} className="space-y-6">
-              <h3 className="text-xl font-semibold text-cyan-400">
-                {category.name}
-              </h3>
-              <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-8  ">
-                {techStack
-                  .filter((tech) => tech.category === category.id)
-                  .map((tech) => (
-                    <div key={tech.name} className="group relative">
-                      <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-purple-500 rotate-45 blur-lg opacity-50 group-hover:opacity-100 transition-opacity duration-300 "></div>
-                      <div className="relative flex flex-col items-center p-4 bg-gray-900/80 backdrop-blur-sm border border-gray-700 hover:border-cyan-500 transition-colors duration-300">
-                        <div className="w-12 h-12 relative group-hover:-translate-y-1 group-hover:scale-110 transition-all duration-300 rounded-lg">
-                          <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-purple-500 opacity-0 group-hover:opacity-20 rounded-lg transition-opacity"></div>
-                          {tech.icon}
-                        </div>
-                        <span className="mt-2 text-sm font-medium opacity-80 group-hover:opacity-100 group-hover:text-cyan-400 transition-all">
-                          {tech.name}
-                        </span>
-                      </div>
-                    </div>
-                  ))}
-              </div>
+      <h2 className="text-4xl font-bold mb-10 relative inline-block">
+        Tech Stack
+        <span className="block w-16 h-1 bg-sky-500 mt-2 rounded-full" />
+      </h2>
+      <div className="space-y-12">
+        {categories.map((category) => (
+          <div key={category.id} className="space-y-6">
+            <h3 className="text-xl font-semibold">{category.name}</h3>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+              {techStack
+                .filter((tech) => tech.category === category.id)
+                .map((tech, index) => (
+                  <div
+                    key={tech.name}
+                    className="flex flex-col items-center gap-2 p-4 bg-[#1E293B] border border-[#334155] rounded-lg animate-fade-in"
+                    style={{ animationDelay: `${index * 0.1}s` }}
+                  >
+                    <div className="text-sky-400">{tech.icon}</div>
+                    <span className="text-sm font-medium">{tech.name}</span>
+                  </div>
+                ))}
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </section>
   );
