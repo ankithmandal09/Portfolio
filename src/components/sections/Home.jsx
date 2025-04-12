@@ -18,7 +18,7 @@ const HomeSection = () => {
             className="order-1 md:order-1 flex justify-center md:justify-start animate-fade-in"
             style={{ animationDelay: "0.2s" }}
           >
-            <div className="relative w-64 h-64 md:w-80 md:h-90 rounded-full overflow-hidden border-4 border-blue-500 shadow-xl">
+            <div className="relative w-64 h-64 md:w-80 md:h-90 rounded-full overflow-hidden border-4 border-blue-500 shadow-xl mt-6">
               <img
                 src="./profile.jpg"
                 alt="profile"
