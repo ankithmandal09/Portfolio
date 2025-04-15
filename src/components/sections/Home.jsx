@@ -3,7 +3,7 @@ import { ArrowDown, FileDown, Github, Linkedin, Mail } from "lucide-react";
 const Home = () => {
   const scrollToNextSection = () => {
     document
-      .getElementById("Education")
+      .getElementById("About")
       ?.scrollIntoView({ behavior: "smooth" });
   };
 
@@ -49,12 +49,11 @@ const Home = () => {
             {/* Buttons */}
             <div className="flex flex-wrap gap-4 mb-8">
               <a
-                href="./resume.pdf"
+                href="./resume.png"
                 download
                 className="flex items-center gap-2 px-4 py-2 bg-white text-black rounded-md hover:bg-gray-200 transition cursor-pointer"
               >
-                <FileDown className="h-4 w-4" />
-                Download Resume
+                Resume
               </a>
 
               <div className="flex gap-3">

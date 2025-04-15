@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Sun, Moon, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -36,7 +36,7 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <nav className="hidden md:flex items-center gap-8">
-          {["Home", "Education", "Projects", "Skills", "Github", "Contact"].map(
+          {["Home", "Education", "Projects", "Skills", "About", "Contact"].map(
             (item) => (
               <button
                 key={item}
@@ -76,7 +76,7 @@ const Navbar = () => {
               "Education",
               "Projects",
               "Skills",
-              "Github",
+              "About",
               "Contact",
             ].map((item) => (
               <button

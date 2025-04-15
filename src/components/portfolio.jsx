@@ -6,12 +6,14 @@ import TechStack from "./sections/TeckStack";
 import Navbar from "./Navbar";
 import GitHub from "./sections/Github";
 import Home from "./sections/Home";
+import About from "./sections/About";
 
 const Portfolio = () => {
   return (
     <div className="min-h-screen bg-gray-900 text-white transition-colors duration-300">
       <Navbar />
-    <Home/>
+      <Home />
+      <About/>
       <Education />
       <Projects />
       <TechStack />
