@@ -49,7 +49,7 @@ const Home = () => {
             {/* Buttons */}
             <div className="flex flex-wrap gap-4 mb-8">
               <a
-                href="./resume.png"
+                href="./resume.pdf"
                 download
                 className="flex items-center gap-2 px-4 py-2 bg-white text-black rounded-md hover:bg-gray-200 transition cursor-pointer"
               >

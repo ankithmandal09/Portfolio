@@ -34,10 +34,32 @@ const techStack = [
     category: "frontend",
   },
   {
+    name: "TypeScript",
+    icon: (
+      <img
+        src="https://img.icons8.com/?size=100&id=Xf1sHBmY73hA&format=png&color=000000"
+        alt=""
+        className="w-10 h-10"
+      />
+    ),
+    category: "frontend",
+  },
+  {
     name: "React",
     icon: (
       <img
         src="https://img.icons8.com/?size=100&id=NfbyHexzVEDk&format=png&color=000000"
+        alt=""
+        className="w-10 h-10"
+      />
+    ),
+    category: "frontend",
+  },
+  {
+    name: "Redux",
+    icon: (
+      <img
+        src="https://img.icons8.com/?size=100&id=jD-fJzVguBmw&format=png&color=000000"
         alt=""
         className="w-10 h-10"
       />
@@ -60,17 +82,6 @@ const techStack = [
     icon: (
       <img
         src="https://img.icons8.com/?size=100&id=r9QJ0VFFrn7T&format=png&color=000000"
-        alt=""
-        className="w-10 h-10"
-      />
-    ),
-    category: "frontend",
-  },
-  {
-    name: "TypeScript",
-    icon: (
-      <img
-        src="https://img.icons8.com/?size=100&id=Xf1sHBmY73hA&format=png&color=000000"
         alt=""
         className="w-10 h-10"
       />
@@ -165,6 +176,17 @@ const techStack = [
     icon: (
       <img
         src="https://www.gstatic.com/devrel-devsite/prod/vd31e3ed8994e05c7f2cd0cf68a402ca7902bb92b6ec0977d7ef2a1c699fae3f9/firebase/images/touchicon-180.png"
+        alt=""
+        className="w-10 h-10"
+      />
+    ),
+    category: "tools",
+  },
+  {
+    name: "Netlify",
+    icon: (
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFwHo7sxZ6PE7kXh9VRgf9mpX3lu7tQEEQlw&s"
         alt=""
         className="w-10 h-10"
       />

@@ -1,4 +1,4 @@
-import React from "react";
+import { useState } from "react";
 
 const projects = [
   {
@@ -9,6 +9,15 @@ const projects = [
     technologies: ["HTML", "CSS", "Javascript", "Firebase"],
     github: "https://github.com/ankithmandal09/B42_Web_024_Scripting-Sorcerers",
     demo: "https://stridesport.netlify.app/",
+  },
+  {
+    title: "Finsage.ai",
+    description:
+      "FinSage.ai is a next-gen financial intelligence platform that empowers users to make informed, data-driven decisions about their financial future. Built with modern technologies and a focus on user-centric design, it enables simulations of life decisions, provides personalized AI-based recommendations, and maintains a privacy-first model. Whether you're planning a career change or managing expenses, FinSage.ai helps you visualize the financial impact of your choices in real time.",
+    image: "./finsage.png",
+    technologies: ["React.js","Javascript", "Node.js", "Express.js", "MongoDB", "TailwindCSS"],
+    github: "https://github.com/smith-bimal/FinSage.ai",
+    demo: "https://finsage-ai-phi.vercel.app/",
   },
   {
     title: "CollabX",
@@ -39,6 +48,15 @@ const projects = [
 ];
 
 const ProjectCard = ({ project }) => {
+    const [isExpanded, setIsExpanded] = useState(false);
+    const toggleReadMore = () => setIsExpanded(!isExpanded);
+
+    const shouldTruncate = project.description.length > 120;
+    const displayText = isExpanded
+      ? project.description
+      : shouldTruncate
+      ? project.description.slice(0, 120) + "..."
+      : project.description;
   return (
     <div className="group bg-gray-800/30 backdrop-blur-sm rounded-xl overflow-hidden hover:scale-105 transition-all duration-300">
       <div className="relative">
@@ -64,7 +82,17 @@ const ProjectCard = ({ project }) => {
       </div>
       <div className="p-6">
         <h3 className="text-xl font-bold text-cyan-400">{project.title}</h3>
-        <p className="text-gray-300 mt-2">{project.description}</p>
+        <p className="text-gray-300 mt-2">
+          {displayText}
+          {shouldTruncate && (
+            <button
+              onClick={toggleReadMore}
+              className="text-cyan-400 underline ml-2 focus:outline-none"
+            >
+              {isExpanded ? "Read less" : "Read more"}
+            </button>
+          )}
+        </p>
         <div className="mt-4">
           <h4 className="text-lg font-semibold text-gray-200">Technologies:</h4>
           <ul className="flex flex-wrap gap-2 mt-2 mb-4">
