@@ -48,13 +48,26 @@ const Home = () => {
 
             {/* Buttons */}
             <div className="flex flex-wrap gap-4 mb-8">
-              <a
-                href="./resume.pdf"
-                download
+              <button
+                onClick={() => {
+                  const resumeUrl = "./resume.pdf";
+
+                  // Open in new tab
+                  window.open(resumeUrl, "_blank");
+
+                  // Create a temporary anchor to trigger download
+                  const link = document.createElement("a");
+                  link.href = resumeUrl;
+                  link.download = "resume.pdf";
+                  document.body.appendChild(link);
+                  link.click();
+                  document.body.removeChild(link);
+                }}
                 className="flex items-center gap-2 px-4 py-2 bg-white text-black rounded-md hover:bg-gray-200 transition cursor-pointer"
               >
+                <FileDown className="h-5 w-5" />
                 Resume
-              </a>
+              </button>
 
               <div className="flex gap-3">
                 <a
