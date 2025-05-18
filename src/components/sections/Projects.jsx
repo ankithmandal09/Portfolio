@@ -15,9 +15,32 @@ const projects = [
     description:
       "FinSage.ai is a next-gen financial intelligence platform that empowers users to make informed, data-driven decisions about their financial future. Built with modern technologies and a focus on user-centric design, it enables simulations of life decisions, provides personalized AI-based recommendations, and maintains a privacy-first model. Whether you're planning a career change or managing expenses, FinSage.ai helps you visualize the financial impact of your choices in real time.",
     image: "./finsage.png",
-    technologies: ["React.js","Javascript", "Node.js", "Express.js", "MongoDB", "TailwindCSS"],
+    technologies: [
+      "React.js",
+      "Javascript",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "TailwindCSS",
+    ],
     github: "https://github.com/smith-bimal/FinSage.ai",
     demo: "https://finsage-ai-phi.vercel.app/",
+  },
+  {
+    title: "Fleet Manager",
+    description:
+      "Introduction FleetManagerPro is a comprehensive fleet management system designed for logistics and transportation companies to track, monitor, and optimize their fleet operations. With features like vehicle tracking, route planning, and real-time updates, FleetManagerPro empowers businesses to manage their fleet efficiently and make data-driven decisions.",
+    image: "./main.png",
+    technologies: [
+      "React.js",
+      "Javascript",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "TailwindCSS",
+    ],
+    github: "https://github.com/ankithmandal09/B44_WEB_077_Fleet_manager",
+    demo: "https://b44-web-077-fleet-manager.vercel.app/",
   },
   {
     title: "CollabX",
