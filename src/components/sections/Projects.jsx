@@ -8,7 +8,7 @@ const projects = [
     image: "./landing_page.png",
     technologies: ["HTML", "CSS", "Javascript", "Firebase"],
     github: "https://github.com/ankithmandal09/B42_Web_024_Scripting-Sorcerers",
-    demo: "https://stridesport.netlify.app/",
+    demo: "https://stridesports.netlify.app/",
   },
   {
     title: "Finsage.ai",
